@@ -1,0 +1,13 @@
+TaskInput:
+    type: input-object
+    config:
+        description: "Входные данные для создания задачи"
+        fields:
+            title:
+                type: "String!"
+            description:
+                type: "String!"
+            status:
+                type: "String"
+            userId:
+                type: "String!"

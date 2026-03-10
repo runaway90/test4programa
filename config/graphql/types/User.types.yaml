@@ -1,0 +1,21 @@
+User:
+    type: object
+    config:
+        fields:
+            id:
+                type: "String!"
+            email:
+                type: "String!"
+            name:
+                type: "String!"
+            roles:
+                type: "[String!]!"
+
+AuthPayload:
+    type: object
+    config:
+        fields:
+            token:
+                type: "String!"
+            user:
+                type: "User!"

@@ -1,0 +1,14 @@
+TaskHistory:
+    type: object
+    config:
+        description: "Запись в истории изменений задачи"
+        fields:
+            id:
+                type: "Int!"
+            oldStatus:
+                type: "String!"
+            newStatus:
+                type: "String!"
+            changedAt:
+                type: "String!"
+                resolve: "@=value.getChangedAt().format('Y-m-d H:i:s')"

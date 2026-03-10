@@ -1,0 +1,38 @@
+# config/graphql/types/Mutation.types.yaml
+Mutation:
+    type: object
+    config:
+        fields:
+            createTask:
+                type: "Task"
+                args:
+                    input:
+                        type: "TaskInput!"
+                resolve: "@=service('App\\\\Infrastructure\\\\GraphQL\\\\Mutation\\\\CreateTaskMutation').__invoke(args['input'])"
+
+            updateTaskStatus:
+                type: "Task!"
+                args:
+                    id:
+                        type: "ID!"
+                    newStatus:
+                        type: "TaskStatus!"
+                resolve: "@=service('App\\\\Infrastructure\\\\GraphQL\\\\Mutation\\\\UpdateTaskStatusMutation').__invoke(args['id'], args['newStatus'])"
+
+            login:
+                type: "AuthPayload!"
+                args:
+                    email:
+                        type: "String!"
+                    password:
+                        type: "String!"
+                resolve: "@=service('App\\\\Infrastructure\\\\GraphQL\\\\Mutation\\\\LoginMutation').__invoke(args['email'], args['password'])"
+
+            updateUserRole:
+                type: "User!"
+                args:
+                    userId:
+                        type: "String!"
+                    role:
+                        type: "String!"
+                resolve: "@=service('App\\\\Infrastructure\\\\GraphQL\\\\Mutation\\\\UpdateUserRoleMutation').__invoke(args['userId'], args['role'])"

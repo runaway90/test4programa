@@ -1,0 +1,17 @@
+Query:
+    type: object
+    config:
+        fields:
+            tasks:
+                type: "[Task!]!"
+                resolve: "@=service('App\\\\Infrastructure\\\\GraphQL\\\\Resolver\\\\TaskResolver').resolveAllTasks()"
+
+            users:
+                type: "[User]"
+                resolve: '@=service("App\\Infrastructure\\GraphQL\\Resolver\\UserResolver").__invoke()'
+            user:
+                type: "User"
+                args:
+                    id:
+                        type: "String!"
+                resolve: '@=service("App\\Infrastructure\\GraphQL\\Resolver\\UserResolver").findOneById(args["id"])'
