@@ -25,7 +25,7 @@ This is a task management application built with the Symfony framework, featurin
 
 1.  **Clone the repository:**
     ```bash
-    git clone <YOUR_REPOSITORY_URL>
+    git clone git@github.com:runaway90/test4programa.git
     cd task_manager
     ```
 
